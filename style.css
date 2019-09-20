@@ -1,0 +1,62 @@
+body{
+background-image: url("images/gameman.jpg");
+background-attachment:fixed;
+background-color: hotpink;
+height: 500px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+font-family: 'sharky&meduza';
+src: url("fonts/sharky&meduza.ttf"), serif;
+}
+
+header{
+  font-weight: 100;
+  font-size: 85px;
+  font-style: italic;
+  text-align: center;
+  color: lime;
+  padding-top: 400px;
+  padding-bottom: 0;
+  margin-bottom: 0%;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 5), 10px 10px 10px rgba(0, 0, 0, 0.8);
+}
+h1{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 50;
+  font-size: 40px;
+  text-align: center;
+  color: limegreen;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 3), 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.button {
+  align-items: center;
+  background-color: #f6a242;
+  color: black;
+  margin: 0px 5px 0px 5px;
+  border: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 3), 10px 10px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button2 {background-color: #a5c93b;}
+.button3 {background-color: #265ca8;}
+.button4 {background-color: #fdd530; }
+.button5 {background-color: #e8599c;}
+
+center{
+  reset: all;
+}
+
+flex-container{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
