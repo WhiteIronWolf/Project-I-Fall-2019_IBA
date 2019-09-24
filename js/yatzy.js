@@ -4,7 +4,7 @@ document.getElementById("checkboxes").style.visibility = "hidden";
 
 var turn = 0 //turn counter
 var roll = [0,0,0,0,0]; //Store Rolls
-var checkboxes = [false,false,true,false,false]; //Checkboxes
+var checkboxes = [false,false,false,false,false]; //Checkboxes
 
 
 /* function setValues(rollArray){
@@ -23,6 +23,13 @@ function getRollValues() {
 //Rolls 5 Dices
 function rollDice() {
 
+    //Hold die/dices
+    checkboxes[0] = document.getElementById("checkbox1").checked;
+    checkboxes[1] = document.getElementById("checkbox2").checked;
+    checkboxes[2] = document.getElementById("checkbox3").checked;
+    checkboxes[3] = document.getElementById("checkbox4").checked;
+    checkboxes[4] = document.getElementById("checkbox5").checked;
+    
     for (var i = 0; i < roll.length; i++) {
 
         if (checkboxes[i] === false) {
@@ -36,6 +43,7 @@ function rollDice() {
     console.table(getRollValues());
     turn++;
     console.log("Turn " + turn);
+    console.log(checkboxes[1]);
     
 }
 
