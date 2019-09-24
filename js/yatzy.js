@@ -46,11 +46,11 @@ function rollDice() {
     turn++;
     console.log("Turn " + turn); // Check What turn user is rolling
 
-    console.log(checkboxes[1]); //Check if Value is set to true or false
+    console.log(checkboxes[0]); //Check if Value is set to true or false
+    console.log(checkboxes[1]);
     console.log(checkboxes[2]);
     console.log(checkboxes[3]);
     console.log(checkboxes[4]);
-    console.log(checkboxes[5]);
     
 }
 
