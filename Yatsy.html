@@ -2,15 +2,121 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="js/yatzy.js"></script>
+    
     <title>Yatsy</title>
     <link  rel="stylesheet" href="style.css" type ="text/css"/>
   </head>
   <body>
     <a href="index.html" style=" position: relative; transition: all .35s ease-Out; ">HOME</a><br /><br />
 
-    <button onclick="rollDice()">Click Here to Roll</button>
-    <p id="rollDice"></p>
-    
+    <h1>Yatzy</h1>
+
+    <fieldset>
+      <legend>Player 1</legend>
+        <table> 
+          <tr>
+            <td>
+              <h2 id="rollDice">Dice Rolls will show up here</h2>
+            </td>
+          </tr>
+          <tr >
+            <td>
+              <form id="checkboxes">
+                  <input id="checkbox1" type="checkbox" value="1">
+                  <label for="checkbox1">Keep 1</label>
+                  <input id="checkbox2" type="checkbox" value="2">
+                  <label for="checkbox2">Keep 2</label>
+                  <input id="checkbox3" type="checkbox" value="3">
+                  <label for="checkbox3">Keep 3</label>
+                  <input id="checkbox4" type="checkbox" value="4">
+                  <label for="checkbox4">Keep 4</label>
+                  <input id="checkbox5" type="checkbox" value="5">
+                  <label for="checkbox5">Keep 5</label>
+                </form>
+            </td>
+          </tr>
+        </table>
+  </fieldset>
+   
+  <button onclick="rollDice()">Click Here to Roll</button><br /><br />
+
+  <p>Lower Section</p>
+  
+  <table>
+    <tr>
+      <td>
+        <button onclick="onePairSum()">Click to view the Sum of One Pair</button>
+      </td>
+      <td>
+        <p id="onePairSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="twoPairSum()">X - Click to view Sum of Two Pairs</button>
+      </td>
+      <td>
+        <p id="twoPairSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="threeEvenSum()">X - Click to view the Sum of Three Even</button>
+      </td>
+      <td>
+        <p id="threeEvenSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="fourEvenSum()">X - Click to view the Sum of Four Even</button>
+      </td>
+      <td>
+        <p id="fourEvenSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="fullHouse()">X - Click to view the Sum of Full House</button>
+      </td>
+      <td>
+        <p id="fullHouseSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="smallStraightSum()">X - Click to view the Sum of Small Straight</button>
+      </td>
+      <td>
+        <p id="smallStraightSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="largeStraight()">X - Click to view the Sum of Large Straight</button>
+      </td>
+      <td>
+        <p id="largeStraight"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="chanceSum()">Click to view the Sum of Chance</button>
+      </td>
+      <td>
+        <p id="chanceSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="yatzySum()">X - Click to view the Sum of Yatzy</button>
+      </td>
+      <td>
+        <p id="yatzySum"></p>
+      </td>
+    </tr>
+  </table>
+
+    <script src="js/yatzy.js"></script>
   </body>
 </html>
