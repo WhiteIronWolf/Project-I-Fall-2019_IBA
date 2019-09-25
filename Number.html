@@ -5,9 +5,27 @@
   <meta charset="utf-8">
   <title>Number</title>
   <link rel="stylesheet" href="css/number.css">
+  <script src="https://kit.fontawesome.com/662de8d7c8.js" crossorigin="anonymous"></script>
 </head>
+<script type="text/javascript">
+  var randomNumber;
+  randomNumber = Math.floor((Math.random() * 1000) + 1); //vælger et random nummer mellem 1 - 1000 og tilføjer det til randomNumber
+  console.log(randomNumber); //shows the number as cheating
+
+  function getValue() {
+    var text = document.querySelector('#answer');
+    var playerNumber = document.querySelector("#number");
+    if (playerNumber.value == randomNumber) {
+      text.innerHTML = "You got it right the number was " + playerNumber.value;
+    }else if (playerNumber.value != randomNumber) {
+      text.innerHTML = "try again";
+    }
+
+  }
+</script>
 
 <body>
+  <script src="js/number.js" charset="utf-8"></script>
   <div id="home">
     <a href="index.html">HOME</a>
   </div>
@@ -16,13 +34,13 @@
     <h1>Please enter a number</h1>
   </div>
   <div class="form">
-    <form class="" onclick="" method="post">
-      <input type="text" name="number" step="1" maxlength="4" max="1000" placeholder="please enter a number between 1 - 1000...">
-      <input type="submit" name="" value="submit">
+    <form>
+      <input id="number" type="text" name="number" step="1" maxlength="4" max="1000" placeholder="please enter a number between 1 - 1000...">
+      <input id="button" type="button" name="button" value="submit" onclick="getValue();">
     </form>
   </div>
   <div class="emptySpace">
-    <p>Your answer will be given down below</p>
+    <p>Your answer will be given down below <i class="far fa-arrow-alt-circle-down"></i></p>
   </div>
   <div class="answer">
     <p id="answer">" "</p>

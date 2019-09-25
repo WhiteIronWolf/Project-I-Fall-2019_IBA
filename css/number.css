@@ -3,8 +3,9 @@
   font-family: 'Roboto', sans-serif;
 }
 body {
-  background-image: url("https://www.wallpapersbyte.com/wp-content/uploads/2015/08/Annapurna-Range-Nepal-Himalayas-Mountains-Sky-Sunset-Nature-WallpapersByte-com-1920x1080.jpg");
-  background-size: cover;
+  background: #fff;
+  background-image: url("images/clock.jpg");
+  background-size: 1920px 600px;
   background-repeat: no-repeat;
   margin: 0;
 }
@@ -44,7 +45,7 @@ input[type=text] {
   box-sizing: border-box;
   text-align: center;
 }
-input[type=submit] {
+input[type=button] {
   width: 100%;
   color: white;
   padding: 12px 20px;
@@ -54,18 +55,20 @@ input[type=submit] {
   margin-top: 50px;
   background-color: rgb(0, 0, 0, 0.5);
 }
-input[type=submit]:hover {
+input[type=button]:hover {
   background-color: rgb(23, 168, 99);
   transition: 1s;
 }
 .emptySpace {
   width: 100%;
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(221, 221, 221);
   margin-top: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  color: white;
+  color: rgb(117, 25, 48);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .answer {
   width: 100%;
