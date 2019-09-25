@@ -46,11 +46,11 @@ function rollDice() {
     turn++;
     console.log("Turn " + turn); // Check What turn user is rolling
 
-    console.log(checkboxes[0]); //Check if Value is set to true or false
-    console.log(checkboxes[1]);
-    console.log(checkboxes[2]);
-    console.log(checkboxes[3]);
-    console.log(checkboxes[4]);
+    console.log("Die 1 was put on hold " + checkboxes[0]); //Check if Value is set to true or false
+    console.log("Die 2 was put on hold " + checkboxes[1]);
+    console.log("Die 3 was put on hold " + checkboxes[2]);
+    console.log("Die 4 was put on hold " + checkboxes[3]);
+    console.log("Die 5 was put on hold " + checkboxes[4]);
     
 }
 
@@ -90,6 +90,31 @@ function onePairSum() {
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //Two Pair
+function twoPairsSum() {
+    var diceCounts = calcCounts();
+    var pair = 0;
+    var twoPairs = 0;
+
+    for (var i = 1; i < diceCounts.length; i++) {
+        if (diceCounts[i] >= 2) {
+            pair += i*2;
+            twoPairs++;
+        }
+    }
+
+
+    if (twoPairs === 2){
+        //return pair;
+        console.log("sum of two pairs is " + pair);
+        document.getElementById("twoPairsSum").innerHTML = "The Sum of two pairs is " + pair;
+    } else {
+        //return 0;
+        console.log("sum of two pairs is " + pair);
+        document.getElementById("twoPairsSum").innerHTML = "The Sum of two pairs is " + pair;
+    }
+}
+
+
 //Three Even
 //Four Even
 //Full House
