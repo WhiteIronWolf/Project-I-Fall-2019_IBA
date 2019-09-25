@@ -11,14 +11,23 @@
   var randomNumber;
   randomNumber = Math.floor((Math.random() * 1000) + 1); //vælger et random nummer mellem 1 - 1000 og tilføjer det til randomNumber
   console.log(randomNumber); //shows the number as cheating
+  var count = 0;
 
   function getValue() {
     var text = document.querySelector('#answer');
     var playerNumber = document.querySelector("#number");
-    if (playerNumber.value == randomNumber) {
-      text.innerHTML = "You got it right the number was " + playerNumber.value;
-    }else if (playerNumber.value != randomNumber) {
-      text.innerHTML = "try again";
+    count++;
+    if (count <= 10) {
+      console.log(count);
+    }
+    if (playerNumber.value == randomNumber && count <= 10) {
+      text.innerHTML = "You win! the number was " + playerNumber.value;
+    } else if (playerNumber.value < randomNumber && count <= 10) {
+      text.innerHTML = "try again, your number was to low";
+    } else if (playerNumber.value > randomNumber && count <= 10) {
+      text.innerHTML = "try again, your number was to high";
+    } else if(count > 10) {
+      text.innerHTML = "Game Over!";
     }
 
   }
@@ -35,8 +44,8 @@
   </div>
   <div class="form">
     <form>
-      <input id="number" type="text" name="number" step="1" maxlength="4" max="1000" placeholder="please enter a number between 1 - 1000...">
-      <input id="button" type="button" name="button" value="submit" onclick="getValue();">
+      <input id="number" type="text" name="number" step="1" maxlength="4" max="1000" placeholder="please enter a number between 1 - 1000..." required />
+      <input id="button" type="button" name="button" value="submit" onclick="getValue();" />
     </form>
   </div>
   <div class="emptySpace">
