@@ -16,17 +16,37 @@
   function getValue() {
     var text = document.querySelector('#answer');
     var playerNumber = document.querySelector("#number");
+    var round = document.querySelector("#round");
     count++;
-    if (count <= 10) {
-      console.log(count);
+    if (count == 1) {
+      round.innerHTML = "Round: 1"
+    } else if (count == 2) {
+      round.innerHTML = "Round: 2"
+    } else if (count == 3) {
+      round.innerHTML = "Round: 3"
+    } else if (count == 4) {
+      round.innerHTML = "Round: 4"
+    } else if (count == 5) {
+      round.innerHTML = "Round: 5"
+    } else if (count == 6) {
+      round.innerHTML = "Round: 6"
+    } else if (count == 7) {
+      round.innerHTML = "Round: 7"
+    } else if (count == 8) {
+      round.innerHTML = "Round: 8"
+    } else if (count == 9) {
+      round.innerHTML = "Round: 9"
+    } else if (count == 10) {
+      round.innerHTML = "Round: 10"
     }
+
     if (playerNumber.value == randomNumber && count <= 10) {
       text.innerHTML = "You win! the number was " + playerNumber.value;
     } else if (playerNumber.value < randomNumber && count <= 10) {
       text.innerHTML = "try again, your number was to low";
     } else if (playerNumber.value > randomNumber && count <= 10) {
       text.innerHTML = "try again, your number was to high";
-    } else if(count > 10) {
+    } else if (count > 10) {
       text.innerHTML = "Game Over!";
     }
 
@@ -50,6 +70,9 @@
   </div>
   <div class="emptySpace">
     <p>Your answer will be given down below <i class="far fa-arrow-alt-circle-down"></i></p>
+  </div>
+  <div class="round">
+    <p id="round">Round: 0</p>
   </div>
   <div class="answer">
     <p id="answer">" "</p>

@@ -74,7 +74,35 @@ input[type=button]:hover {
   width: 100%;
   background-color: white;
   text-align: center;
-  padding: 100px 0px 100px 0px;
+  padding: 0px;
   color: rgb(117, 25, 48);
   font-size: 50px;
+}
+.answer p {
+  margin-bottom: 0;
+}
+.round {
+  background-color: white;
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 50px;
+}
+.round p {
+  margin: 0;
+  padding: 12px 20px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: black;
+  width: 100%;
+  color: white;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {background-color: black;}
+  50% {background-color: rgb(117, 25, 48);}
+  100% {background-color: black;}
 }
