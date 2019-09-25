@@ -102,7 +102,7 @@ function twoPairsSum() {
         }
     }
 
-
+    //Validates if there is two pairs, else returns 0
     if (twoPairs === 2){
         //return pair;
         console.log("sum of two pairs is " + pair);
@@ -110,7 +110,7 @@ function twoPairsSum() {
     } else {
         //return 0;
         console.log("sum of two pairs is " + pair);
-        document.getElementById("twoPairsSum").innerHTML = "The Sum of two pairs is " + pair;
+        document.getElementById("twoPairsSum").innerHTML = "The Sum of two pairs is 0";
     }
 }
 
@@ -129,6 +129,7 @@ function chanceSum() {
     for (var i = 0; i < roll.length; i++) {
         points = points + roll[i]
     }
+    //return points;
     console.log("sum of chance is " + points);
     document.getElementById("chanceSum").innerHTML = "The Sum of Chance is " + points;
 }
