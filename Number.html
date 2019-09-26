@@ -51,9 +51,45 @@
     }
 
   }
+
+  function setCookie(cookie_name,cookie_value,exspire_days) {
+    var d = new Date();
+    d.setTime(d.getTime() + (expire_days*24*60*60));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cookie_name + "=" + cookie_value + ";" + exspire_days + ";path=/";
+  }
+
+  function getCookie(cookie_name) {
+    var name = cookie_name + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+      alert("Hallo " + user + "Your last score was" + count);
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+         setCookie("username", user, 30);
+       }
+    }
+  }
+
 </script>
 
-<body>
+<body onload="checkCookie()">
   <script src="js/number.js" charset="utf-8"></script>
   <div id="home">
     <a href="index.html">HOME</a>
@@ -65,7 +101,7 @@
   <div class="form">
     <form>
       <input id="number" type="text" name="number" step="1" maxlength="4" max="1000" placeholder="please enter a number between 1 - 1000..." required />
-      <input id="button" type="button" name="button" value="let's go" onclick="getValue();" />
+      <input id="button" type="button" name="button" value="submit" onclick="getValue();" />
     </form>
   </div>
   <div class="emptySpace">
@@ -77,6 +113,8 @@
   <div class="answer">
     <p id="answer"><span class="brackets">[ </span>Your hint to the answer will display here<span class="brackets"> ]</span></p>
   </div>
+
+
 
 </body>
 
