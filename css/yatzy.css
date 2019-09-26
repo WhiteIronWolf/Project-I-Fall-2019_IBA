@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+* {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background:seagreen;
+  margin: 0;
+}
+#home {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+#home a {
+  text-decoration: none;
+  color: white;
+}
+
+#gameTitle {
+  text-align: center;
+  margin: 0;
+  padding-top: 15px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#rollButton {
+  margin-left: 5px;
+}
+
+#scoreSections {
+  margin-left: 5px;
+}

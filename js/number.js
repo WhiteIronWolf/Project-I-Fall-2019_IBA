@@ -1,6 +1,6 @@
 //Calculates the number that the user has to guess
 let theNumber = Math.floor(Math.random() * 1000 + 1);
-    
+
 
 //Admin mode - Put the line below into a comment after use
 function adminMode() {
@@ -10,7 +10,7 @@ function adminMode() {
 function guessNumber() {
     var info = document.getElementById("info");
     var guess = document.getElementById("guess");
-         
+
     if (guess.value == theNumber) {
         info.innerHTML = "Your guess " + guess.value + " - The right number is " + theNumber + " Congratulations you win";
     } else if (guess.value < theNumber) {
