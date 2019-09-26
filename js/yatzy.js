@@ -85,7 +85,7 @@ function onePairSum() {
         }
     }
     //return onePair
-    console.log("sum of one pair is " + onePair);
+    console.log("The sum of one pair is " + onePair);
     document.getElementById("onePairSum").innerHTML = "The Sum of one pair is " + onePair;
 }
 
@@ -107,18 +107,83 @@ function twoPairsSum() {
     //Validates if there is two pairs, else returns 0
     if (twoPairs === 2) {
         //return pair;
-        console.log("sum of two pairs is " + pair);
+        console.log("The sum of two pairs is " + pair);
         document.getElementById("twoPairsSum").innerHTML = "The Sum of two pairs is " + pair;
     } else {
         //return 0;
-        console.log("sum of two pairs is " + pair);
+        console.log("The sum of two pairs is 0");
         document.getElementById("twoPairsSum").innerHTML = "The Sum of two pairs is 0";
     }
 }
 
 //Three Even
+function threeEvenSum() {
+    var diceCounts = calcCounts();
+    var threeEven = 0;
+ 
+    for(var i = 1; i<diceCounts.length; i++)
+    {
+        if(diceCounts[i]>=3)
+        {
+            threeEven=i*3;
+        }
+    }
+    //return threeEven;
+    console.log("The sum of three even is " + threeEven);
+    document.getElementById("threeEvenSum").innerHTML = "The Sum of three even is " + threeEven;
+}
 //Four Even
+function fourEvenSum() {
+    var diceCounts = calcCounts();
+    var fourEven = 0;
+ 
+    for(var i = 1; i<diceCounts.length; i++)
+    {
+        if(diceCounts[i]>=4)
+        {
+            fourEven=i*4;
+        }
+    }
+    //return fourPoints;
+    console.log("The sum of four even is " + fourEven);
+    document.getElementById("fourEvenSum").innerHTML = "The Sum of four even is " + fourEven;
+}
+
 //Full House
+    function fullHouseSum() {
+        var diceCounts = calcCounts();
+        var three = 0;
+        var threeCounter = 0;
+        var two = 0;
+        var twoCounter = 0;
+        
+        for(var i = 1; i<diceCounts.length; i++)
+        {
+            if(diceCounts[i]===3)
+            {
+                three=i*3;
+                threeCounter++;
+            }
+            else if (diceCounts[i]===2)
+            {
+                two=i*2;
+                twoCounter++;
+            }
+        }
+        if (twoCounter===1 && threeCounter===1)
+        {
+            //return two+three;
+            console.log("The sum of full house is " + parseInt(two + three));
+            document.getElementById("fullHouseSum").innerHTML = "The Sum of full house is " + parseInt(two + three);
+        }
+        else {
+            //return 0;
+            console.log("The sum of full house is 0");
+            document.getElementById("fullHouseSum").innerHTML = "The Sum of full house is 0";
+        }
+    
+    }
+
 //Small Straight
 //Large Straight
 
@@ -134,6 +199,9 @@ function chanceSum() {
     console.log("sum of chance is " + points);
     document.getElementById("chanceSum").innerHTML = "The Sum of Chance is " + points;
 }
+
+//Yatzy
+
 
 /* To do:
 IN PROCESS - Make Checkboxes that equals the indexnumber of the rollLib array
