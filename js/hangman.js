@@ -1,7 +1,9 @@
 var words = ["kolding", "skole", "webudvikling", "fest", "kodning"]
 
-var word = words[Math.floor(Math.random() * words.length)];
+var word = words[Math.floor(Math.random() * words.length)]; //regne ud et index nummer mellem 0 - 5
 
+//skaber _ _ _ _ _ ud fra det index nummer der er blevet regnet ud.
+//eks. kolding vil være _ _ _ _ _ _ _
 var answerArray = [];
 for (var i = 0; i < word.length; i++)  {
  answerArray[i] = "_";

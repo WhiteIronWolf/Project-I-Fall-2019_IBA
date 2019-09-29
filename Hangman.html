@@ -6,6 +6,24 @@
   <title>Hangman</title>
   <link rel="stylesheet" href="css/hangman.css" type="text/css" />
 </head>
+<script type="text/javascript">
+  var words = ["kolding", "skole", "webudvikling", "fest", "kodning"]
+  var word = words[Math.floor(Math.random() * words.length)]; //regne ud et index nummer mellem 0 - 5
+
+  var answerArray = [];
+  for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+  }
+  /*for loopet skaber _ _ _ _ _ ud fra det index nummer der er blevet regnet ud.
+  eks. kolding vil være _ _ _ _ _ _ _ */
+
+  function testAlert() {
+    var check = document.querySelector("#letter");
+    if (check.value == 1 || "k") {
+      alert("Hello Player");
+    }
+  }
+</script>
 
 <body>
   <div id="home">
@@ -16,11 +34,13 @@
     <p>Please insert a letter to begin</p>
   </div>
   <form>
-    <input type="text" maxlength="1" placeholder="Please insert a letter dear player..." required />
-    <button class="btn" onclick="">Let's go!</button>
+    <input id="letter" type="text" maxlength="1" placeholder="Please insert a letter dear player..." required />
+    <button class="btn" onclick="testAlert()">Let's go!</button>
   </form>
   </div>
-  </center>
+  <div class="underscore">
+    <p id="underscore"></p>
+  </div>
 </body>
 
 </html>
