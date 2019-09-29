@@ -7,6 +7,7 @@ function adminMode() {
     var admin = document.getElementById("adminMode");
     admin.innerHTML = "The number is: " + theNumber;
 }
+
 function guessNumber() {
     var info = document.getElementById("info");
     var guess = document.getElementById("guess");
@@ -25,4 +26,3 @@ function guessNumber() {
 
 //Cookies
 // document.cookie="name=player1; expires=Mon, 23 Dec 2019 12:30:00 UTC; path/";
-

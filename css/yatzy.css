@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 * {
   font-family: 'Roboto', sans-serif;
+  margin: 0px;
 }
 body {
   background:seagreen;
@@ -30,4 +31,8 @@ body {
 
 #scoreSections {
   margin-left: 5px;
+}
+
+tr {
+  margin: 0px;
 }

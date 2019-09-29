@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="js/number.js"></script>
     <title>number</title>
 </head>
+
 <body>
     <form method="get" action="Index.html">
         <button type="submit">Home</button>
@@ -15,13 +17,15 @@
     <h1>Guess a number 1-1000</h1>
     <p id="adminMode" onclick="adminMode()"><button>Click Here to Cheat</button></p>
     <p id="info"></p>
-    <form onsubmit="guessNumber();return false;"> <!--Instead of submitting the form, the submit button will trigger the guessNumber function in the javascript-->
+    <form onsubmit="guessNumber();return false;">
+        <!--Instead of submitting the form, the submit button will trigger the guessNumber function in the javascript-->
         <label for="number">Enter a number between 1 and 1000</label>
         <input type="number" min="1" max="1000" step="1" id="guess" name="number" placeholder="Number" required />
         <!--<input type="button" id="button1" value="Guess" onclick="guessNumber()" /> This was my original line of code-->
         <input type="submit" value="Guess">
     </form>
-    
- 
+
+
 </body>
+
 </html>

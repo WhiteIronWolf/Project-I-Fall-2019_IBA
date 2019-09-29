@@ -84,12 +84,64 @@
     <button onclick="rollDice()">Click Here to Roll</button><br /><br />
   </div>
 
-  <p>Lower Section</p>
-
-  <table id="scoreSections">
+  <p>Upper Section</p>
+  <table id="upperScoreSection">
     <tr>
       <td>
-        <button onclick="onePairSum()">Click to view the Sum of One Pair</button>
+        <button>Save The Sum of 1's</button>
+      </td>
+      <td>
+        <p id="sameRollSumOne"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>Save The Sum of 2's</button>
+      </td>
+      <td>
+        <p id="sameRollSumTwo"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>Save The Sum of 3's</button>
+      </td>
+      <td>
+        <p id="sameRollSumThree"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>Save The Sum of 4's</button>
+      </td>
+      <td>
+        <p id="sameRollSumFour"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>Save The Sum of 5's</button>
+      </td>
+      <td>
+        <p id="sameRollSumFive"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>Save The Sum of 6's</button>
+      </td>
+      <td>
+        <p id="sameRollSumSix"></p>
+      </td>
+    </tr>
+
+  </table>
+
+  <p>Lower Section</p>
+  <table id="lowerScoreSection">
+    <tr>
+      <td>
+        <button onclick="onePairSum()">Save The Sum of One Pair</button>
       </td>
       <td>
         <p id="onePairSum"></p>
@@ -97,7 +149,7 @@
     </tr>
     <tr>
       <td>
-        <button onclick="twoPairsSum()">Click to view the Sum of Two Pairs</button>
+        <button onclick="twoPairsSum()">Save The Sum of Two Pairs</button>
       </td>
       <td>
         <p id="twoPairsSum"></p>
@@ -105,7 +157,7 @@
     </tr>
     <tr>
       <td>
-        <button onclick="threeEvenSum()">Click to view the Sum of Three Even</button>
+        <button onclick="threeEvenSum()">Save The Sum of Three Even</button>
       </td>
       <td>
         <p id="threeEvenSum"></p>
@@ -113,7 +165,7 @@
     </tr>
     <tr>
       <td>
-        <button onclick="fourEvenSum()">Click to view the Sum of Four Even</button>
+        <button onclick="fourEvenSum()">Save The Sum of Four Even</button>
       </td>
       <td>
         <p id="fourEvenSum"></p>
@@ -121,7 +173,7 @@
     </tr>
     <tr>
       <td>
-        <button onclick="fullHouseSum()">Click to view the Sum of Full House</button>
+        <button onclick="fullHouseSum()">Save The Sum of Full House</button>
       </td>
       <td>
         <p id="fullHouseSum"></p>
@@ -129,7 +181,7 @@
     </tr>
     <tr>
       <td>
-        <button onclick="smallStraightSum()">X - Click to view the Sum of Small Straight</button>
+        <button onclick="smallStraightSum()">Save The Sum of Small Straight</button>
       </td>
       <td>
         <p id="smallStraightSum"></p>
@@ -137,15 +189,15 @@
     </tr>
     <tr>
       <td>
-        <button onclick="largeStraight()">X - Click to view the Sum of Large Straight</button>
+        <button onclick="largeStraightSum()">Save The Sum of Large Straight</button>
       </td>
       <td>
-        <p id="largeStraight"></p>
+        <p id="largeStraightSum"></p>
       </td>
     </tr>
     <tr>
       <td>
-        <button onclick="chanceSum()">Click to view the Sum of Chance</button>
+        <button onclick="chanceSum()">Save The Sum of Chance</button>
       </td>
       <td>
         <p id="chanceSum"></p>
@@ -153,13 +205,15 @@
     </tr>
     <tr>
       <td>
-        <button onclick="yatzySum()">X - Click to view the Sum of Yatzy</button>
+        <button onclick="yatzySum()">Save The Sum of Yatzy</button>
       </td>
       <td>
         <p id="yatzySum"></p>
       </td>
     </tr>
   </table>
+
+
 
   <script src="js/yatzy.js"></script>
 </body>
