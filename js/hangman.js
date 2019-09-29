@@ -1,46 +1,32 @@
 var words = ["kolding", "skole", "webudvikling", "fest", "kodning"]
+var word = words[Math.floor(Math.random() * words.length)]; //regne ud et index nummer mellem 0 - 5 fra words.
+console.log(word)
 
-var word = words[Math.floor(Math.random() * words.length)]; //regne ud et index nummer mellem 0 - 5
-
-//skaber _ _ _ _ _ ud fra det index nummer der er blevet regnet ud.
-//eks. kolding vil være _ _ _ _ _ _ _
+/*for loopet skaber _ _ _ _ _ ud fra det index nummer der er blevet regnet ud.
+eks. kolding vil være _ _ _ _ _ _ _ */
 var answerArray = [];
-for (var i = 0; i < word.length; i++)  {
- answerArray[i] = "_";
+for (var i = 0; i < word.length; i++) {
+  answerArray[i] = "_";
+  console.log(answerArray)
 }
 
-var remainingLetters = word.length;
+function loadFunction() {
+  var underscore = document.getElementById("underscore");
+  underscore.innerHTML = answerArray.join(" ");
+}
 
-while (remainingLetters > 0) {
-
-alert(answerArray.join(" "));
-
-var guess = prompt("Guess a letter or click cancel to stop playing.");
-
-if (guess == null) {
-
-break;
-
-} else if (guess.length !== 1) {
-
- alert("Please enter a single letter only.");
-
- } else {
-
-  for (var j = 0; j < word.length; j++) {
-
-  if (word[j] == guess){
-
-   answerArray[j] = guess;
-
-   remainingLetters--;
-   }
-
+function enter() {
+  var guess = document.querySelector("#letter");
+  if (guess.value < 10) {
+    var error = document.querySelector("#error");
+    error.innerHTML = "Please enter a letter";
+    error.style.color = "red";
   }
- }
+  for (var j = 0; j < word.length; j++) {
+    if (guess.value == word[j]) {
+      answerArray[j] = guess.value;
+      console.log("Hey you got it right");
+    }
+  }
 
 }
-
- alert(answerArray.join(" "));
-
- alert("Nice job! the answer was " + word);

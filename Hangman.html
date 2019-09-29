@@ -5,37 +5,20 @@
   <meta charset="utf-8" />
   <title>Hangman</title>
   <link rel="stylesheet" href="css/hangman.css" type="text/css" />
+  <script src="js/hangman.js" charset="utf-8"></script>
 </head>
-<script type="text/javascript">
-  var words = ["kolding", "skole", "webudvikling", "fest", "kodning"]
-  var word = words[Math.floor(Math.random() * words.length)]; //regne ud et index nummer mellem 0 - 5
 
-  var answerArray = [];
-  for (var i = 0; i < word.length; i++) {
-    answerArray[i] = "_";
-  }
-  /*for loopet skaber _ _ _ _ _ ud fra det index nummer der er blevet regnet ud.
-  eks. kolding vil være _ _ _ _ _ _ _ */
-
-  function testAlert() {
-    var check = document.querySelector("#letter");
-    if (check.value == 1 || "k") {
-      alert("Hello Player");
-    }
-  }
-</script>
-
-<body>
+<body onload="loadFunction()"> <!-- denne function køre først når siden er loadet -->
   <div id="home">
     <a href="index.html">HOME</a>
   </div>
   <div class="text">
     <h1>This is the hangman game</h1>
-    <p>Please insert a letter to begin</p>
+    <p id="error">Please insert a letter to begin</p>
   </div>
-  <form>
+  <form action="#">
     <input id="letter" type="text" maxlength="1" placeholder="Please insert a letter dear player..." required />
-    <button class="btn" onclick="testAlert()">Let's go!</button>
+    <button class="btn" onclick="enter()">Let's go!</button> <!-- kun også have kaldt function for guess istedet for enter -->
   </form>
   </div>
   <div class="underscore">

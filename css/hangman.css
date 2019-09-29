@@ -64,3 +64,10 @@ input[type=text] {
   background-color: rgb(48, 0, 97, 0.5);
   transition: 1s;
 }
+#underscore {
+  padding: 12px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 50px;
+  color: white;
+}
