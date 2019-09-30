@@ -46,7 +46,7 @@ function rollDice() {
     document.getElementById("lowerScoreSection").style.visibility = "visible";
     consoleLog();
 
-    if (turn < 2) {} else {
+    if (turn >= 2) {
         document.getElementById("checkboxes").style.visibility = "hidden";
         document.getElementById("rollButton").style.visibility = "hidden";
 
