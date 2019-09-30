@@ -7,7 +7,6 @@ eks. kolding vil være _ _ _ _ _ _ _ */
 var answerArray = [];
 for (var i = 0; i < word.length; i++) {
   answerArray[i] = "_";
-  console.log(answerArray)
 }
 
 function loadFunction() {
