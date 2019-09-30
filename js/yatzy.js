@@ -2,10 +2,11 @@
 document.getElementById("checkboxes").style.visibility = "hidden";
 document.getElementById("upperScoreSection").style.visibility = "hidden";
 document.getElementById("lowerScoreSection").style.visibility = "hidden";
+
 var turn = 0
 var roll = [0, 0, 0, 0, 0]; //Store Rolls
 var checkboxes = [false, false, false, false, false]; //Checkboxes
-
+var savedSection = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, ] //Section Scores
 
 //Store dice rolls in a function
 function getRollValues() {
@@ -27,7 +28,6 @@ function rollDice() {
         if (checkboxes[i] === false) {
             roll[i] = Math.floor((Math.random() * 6) + 1);
         }
-
     }
 
     document.getElementById("checkboxes").style.visibility = "visible";
@@ -49,7 +49,7 @@ function rollDice() {
     if (turn < 2) {} else {
         document.getElementById("checkboxes").style.visibility = "hidden";
         document.getElementById("rollButton").style.visibility = "hidden";
-        
+
         //Shows possible points for each combination
         document.getElementById("upperScoreSection").style.visibility = "visible";
         document.getElementById("lowerScoreSection").style.visibility = "visible";
@@ -59,8 +59,8 @@ function rollDice() {
     turn++;
 }
 
-
 // :::::::::::::::::::::::::ANALYZE THIS PART:::::::::::::::::::::::
+
 function getResults() {
 
     var results = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -79,7 +79,6 @@ function getResults() {
 
     return results;
 }
-
 
 // Returns an int[7] containing the frequency of face values.
 // Frequency at index v is the number of dice with the face value v, 1 <= v
@@ -103,13 +102,13 @@ function sameRollSum(intValue) {
     var same = 0;
 
     for (var i = 0; i < roll.length; i++) {
+
         if (roll[i] === intValue) {
             same = same + roll[i];
         }
     }
     return same;
 }
-
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //One Pair
@@ -163,6 +162,7 @@ function threeEvenSum() {
     return threeEven;
     //console.log("The sum of three even is " + threeEven);
 }
+
 //Four Even
 function fourEvenSum() {
     var diceCounts = calcCounts();
@@ -201,7 +201,6 @@ function fullHouseSum() {
         return 0;
         //console.log("The sum of full house is 0");
     }
-
 }
 
 //Small Straight
@@ -209,18 +208,15 @@ function smallStraightSum() {
     var diceCounts = calcCounts();
     var smallStraight = 0;
     var counter = 0;
- 
- 
-    for(var i = 1; i<=5; i++)
-    {
-        if(diceCounts[i]===1)
-        {
+
+
+    for (var i = 1; i <= 5; i++) {
+        if (diceCounts[i] === 1) {
             counter++;
         }
- 
+
     }
-    if (counter===5)
-    {
+    if (counter === 5) {
         smallStraight = 15;
     }
     return smallStraight;
@@ -233,16 +229,13 @@ function largeStraightSum() {
     var counter = 0;
 
 
-    for(var i = 2; i<diceCounts.length; i++)
-    {
-        if(diceCounts[i]===1)
-        {
+    for (var i = 2; i < diceCounts.length; i++) {
+        if (diceCounts[i] === 1) {
             counter++;
         }
 
     }
-    if (counter===5)
-    {
+    if (counter === 5) {
         largeStraight = 20;
     }
     return largeStraight;
@@ -265,82 +258,163 @@ function yatzySum() {
     var diceCounts = calcCounts();
     var yatzy = 0;
 
-    for(var i = 1; i<diceCounts.length; i++)
-    {
-        if(diceCounts[i]>=5)
-        {
-            yatzy=i*5;
+    for (var i = 1; i < diceCounts.length; i++) {
+        if (diceCounts[i] >= 5) {
+            yatzy = i * 5;
         }
     }
-    if(yatzy!==0)
-    {
+    if (yatzy !== 0) {
         return 50;
-    }
-    else
+    } else
         return 0;
 }
 
 function consoleLog() {
     console.log(roll);
     console.log("Count of each number rolled = " + calcCounts());
-    
-    //Upper Section Score
-    console.log("Same value points = " + sameRollSum(1));
-    document.getElementById("sameRollSumOne").innerHTML = "The Sum of 1's is " + sameRollSum(1);
 
-    console.log("Same value points = " + sameRollSum(2));
-    document.getElementById("sameRollSumTwo").innerHTML = "The Sum of 2's is " + sameRollSum(2);
+    //Upper Sections Score
+    if (savedSection[0] === false) {
+        console.log("Same value points = " + sameRollSum(1));
+        document.getElementById("sameRollSumOne").innerHTML = sameRollSum(1);
+    } else {
+        document.getElementById("button1").style.visibility = "hidden";
+    }
 
-    console.log("Same value points = " + sameRollSum(3));
-    document.getElementById("sameRollSumThree").innerHTML = "The Sum of 3's is " + sameRollSum(3);
+    if (savedSection[1] === false) {
+        console.log("Same value points = " + sameRollSum(2));
+        document.getElementById("sameRollSumTwo").innerHTML = sameRollSum(2);
+    } else {
+        document.getElementById("button2").style.visibility = "hidden";
+    }
 
-    console.log("Same value points = " + sameRollSum(4));
-    document.getElementById("sameRollSumFour").innerHTML = "The Sum of 4's is " + sameRollSum(4);
+    if (savedSection[2] === false) {
+        console.log("Same value points = " + sameRollSum(3));
+        document.getElementById("sameRollSumThree").innerHTML = sameRollSum(3);
+    } else {
+        document.getElementById("button3").style.visibility = "hidden";
+    }
 
-    console.log("Same value points = " + sameRollSum(5));
-    document.getElementById("sameRollSumFive").innerHTML = "The Sum of 5's is " + sameRollSum(5);
+    if (savedSection[3] === false) {
+        console.log("Same value points = " + sameRollSum(4));
+        document.getElementById("sameRollSumFour").innerHTML = sameRollSum(4);
+    } else {
+        document.getElementById("button4").style.visibility = "hidden";
+    }
 
-    console.log("Same value points = " + sameRollSum(6));
-    document.getElementById("sameRollSumSix").innerHTML = "The Sum of 6's is " + sameRollSum(6);
-    
-    //Lower Section Score
-    console.log("One pair points = " + onePairSum());
-    document.getElementById("onePairSum").innerHTML = "The Sum of One pair is " + onePairSum();
-    
-    console.log("Two pair points = " + twoPairsSum());
-    document.getElementById("twoPairsSum").innerHTML = "The Sum of Two pairs is " + twoPairsSum();
-    
-    console.log("Three same points = " + threeEvenSum());
-    document.getElementById("threeEvenSum").innerHTML = "The Sum of Three even is " + threeEvenSum();
-    
-    console.log("Four same points = " + fourEvenSum());
-    document.getElementById("fourEvenSum").innerHTML = "The Sum of Four even is " + fourEvenSum();
-    
-    console.log("Full house points = " + fullHouseSum());
-    document.getElementById("fullHouseSum").innerHTML = "The Sum of Full house is " + fullHouseSum();
-    
-    console.log("Small Straight points = "+smallStraightSum());
-    document.getElementById("smallStraightSum").innerHTML = "The Sum of Small straight is " + smallStraightSum();
-    
-    console.log("Large straight point = "+ largeStraightSum());
-    document.getElementById("largeStraightSum").innerHTML = "The Sum of Large straight is " + largeStraightSum();
-    
-    console.log("Chance points = " + chanceSum());
-    document.getElementById("chanceSum").innerHTML = "The Sum of Chance is " + chanceSum();
-    
-    console.log("Yatzy points = "+yatzySum());
-    document.getElementById("yatzySum").innerHTML = "The Sum of Yatzy is " + yatzySum();
+    if (savedSection[4] === false) {
+        console.log("Same value points = " + sameRollSum(5));
+        document.getElementById("sameRollSumFive").innerHTML = sameRollSum(5);
+    } else {
+        document.getElementById("button5").style.visibility = "hidden";
+    }
+
+    if (savedSection[5] === false) {
+        console.log("Same value points = " + sameRollSum(6));
+        document.getElementById("sameRollSumSix").innerHTML = sameRollSum(6);
+    } else {
+        document.getElementById("button6").style.visibility = "hidden";
+    }
+
+    //Lower Sections Score
+    if (savedSection[6] === false) {
+        console.log("One pair points = " + onePairSum());
+        document.getElementById("onePairSum").innerHTML = onePairSum();
+    } else {
+        document.getElementById("button7").style.visibility = "hidden";
+    }
+
+    if (savedSection[7] === false) {
+        console.log("Two pair points = " + twoPairsSum());
+        document.getElementById("twoPairsSum").innerHTML = twoPairsSum();
+    } else {
+        document.getElementById("button8").style.visibility = "hidden";
+    }
+
+    if (savedSection[8] === false) {
+        console.log("Three same points = " + threeEvenSum());
+        document.getElementById("threeEvenSum").innerHTML = threeEvenSum();
+    } else {
+        document.getElementById("button9").style.visibility = "hidden";
+    }
+
+    if (savedSection[9] === false) {
+        console.log("Four same points = " + fourEvenSum());
+        document.getElementById("fourEvenSum").innerHTML = fourEvenSum();
+    } else {
+        document.getElementById("button10").style.visibility = "hidden";
+    }
+
+    if (savedSection[10] === false) {
+        console.log("Full house points = " + fullHouseSum());
+        document.getElementById("fullHouseSum").innerHTML = fullHouseSum();
+    } else {
+        document.getElementById("button11").style.visibility = "hidden";
+    }
+
+    if (savedSection[11] === false) {
+        console.log("Small Straight points = " + smallStraightSum());
+        document.getElementById("smallStraightSum").innerHTML = smallStraightSum();
+    } else {
+        document.getElementById("button12").style.visibility = "hidden";
+    }
+
+    if (savedSection[12] === false) {
+        console.log("Large straight point = " + largeStraightSum());
+        document.getElementById("largeStraightSum").innerHTML = largeStraightSum();
+    } else {
+        document.getElementById("button13").style.visibility = "hidden";
+    }
+
+    if (savedSection[13] === false) {
+        console.log("Chance points = " + chanceSum());
+        document.getElementById("chanceSum").innerHTML = chanceSum();
+    } else {
+        document.getElementById("button14").style.visibility = "hidden";
+    }
+
+    if (savedSection[14] === false) {
+        console.log("Yatzy points = " + yatzySum());
+        document.getElementById("yatzySum").innerHTML = yatzySum();
+    } else {
+        document.getElementById("button15").style.visibility = "hidden";
+    }
 }
 
-/* To do:
-DONE -       Make Checkboxes that equals the indexnumber of the rollLib array
-             Set the them to false if checked and true if unchecked
 
-DONE -       Add above code to rollDice command
+function nextRound() {
+    turn = 0
+    document.getElementById("rollDice").innerHTML = "Next Round";
+    document.getElementById("checkboxes").style.visibility = "hidden";
+    document.getElementById("rollButton").style.visibility = "visible";
+    document.getElementById("upperScoreSection").style.visibility = "hidden";
+    document.getElementById("lowerScoreSection").style.visibility = "hidden";
+    document.getElementById("checkbox1").checked = false;
+    document.getElementById("checkbox2").checked = false;
+    document.getElementById("checkbox3").checked = false;
+    document.getElementById("checkbox4").checked = false;
+    document.getElementById("checkbox5").checked = false;
+    finalturn++;
+}
 
-DONE -       Add a counter for 2x reroll puporse - set to 1 ++ for each roll - when it reaches 3 remove roll dice button
+function finalSum() {
+    var s1 = document.getElementById("sameRollSumOne").innerHTML;
+    var s2 = document.getElementById("sameRollSumTwo").innerHTML;
+    var s3 = document.getElementById("sameRollSumThree").innerHTML;
+    var s4 = document.getElementById("sameRollSumFour").innerHTML;
+    var s5 = document.getElementById("sameRollSumFive").innerHTML;
+    var s6 = document.getElementById("sameRollSumSix").innerHTML;
+    var s7 = document.getElementById("onePairSum").innerHTML;
+    var s8 = document.getElementById("twoPairsSum").innerHTML;
+    var s9 = document.getElementById("threeEvenSum").innerHTML;
+    var s10 = document.getElementById("fourEvenSum").innerHTML;
+    var s11 = document.getElementById("fullHouseSum").innerHTML;
+    var s12 = document.getElementById("smallStraightSum").innerHTML;
+    var s13 = document.getElementById("largeStraightSum").innerHTML;
+    var s14 = document.getElementById("chanceSum").innerHTML;
+    var s15 = document.getElementById("yatzySum").innerHTML;
 
-DONE -       Make new array that stores total combinations - each combination should have a arrayindex number that turn to true if taken
 
-DONE -       Use function to check the array for combinations
-*/
+    var finalSum = parseFloat(s1) + parseFloat(s2) + parseFloat(s3) + parseFloat(s4) + parseFloat(s5) + parseFloat(s6) + parseFloat(s7) + parseFloat(s8) + parseFloat(s9) + parseFloat(s10) + parseFloat(s11) + parseFloat(s12) + parseFloat(s13) + parseFloat(s14) + parseFloat(s15);
+    document.getElementById("finalSum").innerHTML = "The Sum of Upper Section + Lower Section is " + finalSum;
+}
