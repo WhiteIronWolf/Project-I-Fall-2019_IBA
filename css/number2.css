@@ -1,0 +1,10 @@
+ 
+  input:required:invalid {
+    border-color: #c00000;
+    background-color: #ffdddd;
+  }
+
+  input:required:valid {
+    border-color: #3dc000;
+    background-color: #deffdd;
+  }

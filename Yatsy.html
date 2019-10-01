@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Yatsy</title>
+  <link rel="stylesheet" href="css/yatzy.css" type="text/css" />
+</head>
+
+<body>
+  <div id="home"><a href="index.html" style=" position: relative; transition: all .35s ease-Out; ">HOME</a></div>
+  <br /><br />
+
+  <div id="gameTitle">
+    <h1>Yatzy</h1>
+  </div>
+  <Table id="diceTable">
+    <tr>
+      <td>
+        <fieldset>
+          <legend>Player 1</legend>
+          <table>
+            <tr>
+              <td>
+                <center>
+                  <h2 id="rollDice">Dice Rolls will show up here</h2>
+                </center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <form id="checkboxes">
+                  <input id="checkbox1" type="checkbox">
+                  <label for="checkbox1">Keep 1</label>
+                  <input id="checkbox2" type="checkbox">
+                  <label for="checkbox2">Keep 2</label>
+                  <input id="checkbox3" type="checkbox">
+                  <label for="checkbox3">Keep 3</label>
+                  <input id="checkbox4" type="checkbox">
+                  <label for="checkbox4">Keep 4</label>
+                  <input id="checkbox5" type="checkbox">
+                  <label for="checkbox5">Keep 5</label>
+                </form>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </td>
+      <td>
+        <!-- <fieldset>
+          <legend>Player 2</legend>
+          <table>
+            <tr>
+              <td>
+                <center>
+                  <h2 id="P2rollDice">Dice Rolls will show up here</h2>
+                </center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <form id="P2checkboxes">
+                  <input id="P2checkbox1" type="checkbox">
+                  <label for="P2checkbox1">Keep 1</label>
+                  <input id="P2checkbox2" type="checkbox">
+                  <label for="P2checkbox2">Keep 2</label>
+                  <input id="P2checkbox3" type="checkbox">
+                  <label for="P2checkbox3">Keep 3</label>
+                  <input id="P2checkbox4" type="checkbox">
+                  <label for="P2checkbox4">Keep 4</label>
+                  <input id="P2checkbox5" type="checkbox">
+                  <label for="P2checkbox5">Keep 5</label>
+                </form>
+              </td>
+            </tr>
+          </table>
+        </fieldset>-->
+      </td>
+    </tr>
+  </Table>
+
+  <div id="rollButton">
+    <button onclick="rollDice()">Click Here to Roll</button><br /><br />
+  </div>
+
+  <p>Upper Section</p>
+  <table id="upperScoreSection">
+    <tr>
+      <td>
+        <button id="button1" onclick="savedSection[0] = (true), nextRound()">Save The Sum of 1's</button>
+      </td>
+      <td>
+        <p id="sameRollSumOne"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button2" onclick="savedSection[1] = (true), nextRound()">Save The Sum of 2's</button>
+      </td>
+      <td>
+        <p id="sameRollSumTwo"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button3" onclick="savedSection[2] = (true), nextRound()">Save The Sum of 3's</button>
+      </td>
+      <td>
+        <p id="sameRollSumThree"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button4" onclick="savedSection[3] = (true), nextRound()">Save The Sum of 4's</button>
+      </td>
+      <td>
+        <p id="sameRollSumFour"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button5" onclick="savedSection[4] = (true), nextRound()">Save The Sum of 5's</button>
+      </td>
+      <td>
+        <p id="sameRollSumFive"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button6" onclick="savedSection[5] = (true), nextRound()">Save The Sum of 6's</button>
+      </td>
+      <td>
+        <p id="sameRollSumSix"></p>
+      </td>
+    </tr>
+
+  </table>
+
+  <p>Lower Section</p>
+  <table id="lowerScoreSection">
+    <tr>
+      <td>
+        <button id="button7" onclick="savedSection[6] = (true), nextRound()">Save The Sum of One Pair</button>
+      </td>
+      <td>
+        <p id="onePairSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button8" onclick="savedSection[7] = (true), nextRound()">Save The Sum of Two Pairs</button>
+      </td>
+      <td>
+        <p id="twoPairsSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button9" onclick="savedSection[8] = (true), nextRound()">Save The Sum of Three Even</button>
+      </td>
+      <td>
+        <p id="threeEvenSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button10" onclick="savedSection[9] = (true), nextRound()">Save The Sum of Four Even</button>
+      </td>
+      <td>
+        <p id="fourEvenSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button11" onclick="savedSection[10] = (true), nextRound()">Save The Sum of Full House</button>
+      </td>
+      <td>
+        <p id="fullHouseSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button12" onclick="savedSection[11] = (true), nextRound()">Save The Sum of Small Straight</button>
+      </td>
+      <td>
+        <p id="smallStraightSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button13" onclick="savedSection[12] = (true), nextRound()">Save The Sum of Large Straight</button>
+      </td>
+      <td>
+        <p id="largeStraightSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button14" onclick="savedSection[13] = (true), nextRound()">Save The Sum of Chance</button>
+      </td>
+      <td>
+        <p id="chanceSum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="button15" onclick="savedSection[14] = (true), nextRound()">Save The Sum of Yatzy</button>
+      </td>
+      <td>
+        <p id="yatzySum"></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button id="checkScore" onclick="finalSum()">Check Score</button>
+      </td>
+      <td>
+        <h1 id="finalSum"></h1>
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <script src="js/yatzy.js"></script>
+</body>
+
+</html>
