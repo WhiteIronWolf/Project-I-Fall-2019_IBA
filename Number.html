@@ -10,14 +10,14 @@
 <script type="text/javascript">
   var randomNumber;
   randomNumber = Math.floor((Math.random() * 1000) + 1); //vælger et random nummer mellem 1 - 1000 og tilføjer det til randomNumber
-  console.log(randomNumber); //shows the number as cheating
-  var count = 0;
+  console.log(randomNumber); // Viser det randomNumber i console.log som snydevej
+  var count = 0; // variable count bruges til runde nummer eks. round: 0
 
-  function getValue() {
-    var text = document.querySelector('#answer');
-    var playerNumber = document.querySelector("#number");
-    var round = document.querySelector("#round");
-    count++;
+  function getValue() { // for hver gang spilleren klikker på let's go
+    var text = document.querySelector('#answer'); // hentes fra p og bruges til hint
+    var playerNumber = document.querySelector("#number"); // Henter fra input type="text"
+    var round = document.querySelector("#round"); //bruges til rundenummer
+    count++; // Hver klik tilføjes til count som er lig med runde nummer
     if (count == 1) {
       round.innerHTML = "Round: 1"
     } else if (count == 2) {
@@ -54,27 +54,26 @@
 </script>
 
 <body>
-  <script src="js/number.js" charset="utf-8"></script>
-  <div id="home">
+  <div id="home"> <!-- det her er kun navigations menuen -->
     <a href="index.html">HOME</a>
   </div>
-  <div class="text">
+  <div class="text"> <!-- det her er kun navigations menuen -->
     <p>This is a guessing game</p>
     <h1>Please enter a number</h1>
   </div>
   <div class="form">
-    <form>
+    <form> <!-- her kan spilleren indtaste sit nummer og trykke let's go -->
       <input id="number" type="text" name="number" step="1" maxlength="4" max="1000" placeholder="please enter a number between 1 - 1000..." required />
-      <input id="button" type="button" name="button" value="let's go" onclick="getValue();" />
+      <input id="button" type="button" name="button" value="let's go" onclick="getValue();" /> <!-- Hver gang man klikker let's go udføres function get value() -->
     </form>
   </div>
   <div class="emptySpace">
     <p>Your answer will be given down below <i class="far fa-arrow-alt-circle-down"></i></p>
   </div>
-  <div class="round">
+  <div class="round"> <!-- her kan man se hvilken runde man er ved  -->
     <p id="round">Round: 0</p>
   </div>
-  <div class="answer">
+  <div class="answer"> <!-- her vil spilleren få sit hint -->
     <p id="answer"><span class="brackets">[ </span>Your hint to the answer will display here<span class="brackets"> ]</span></p>
   </div>
 
