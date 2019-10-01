@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="master.css">
+  <script src="script.js" charset="utf-8"></script>
+</head>
+
+<body onload="onload()">
+  <h1 id="message">Hello World!</h1>
+  <form onsubmit="enterLetter(); return false;">
+    <input type="text" id="text" name="text" maxlength="1" placeholder="Enter a letter..." required>
+    <input type="submit" name="submit" value="Let's go">
+  </form>
+  <div class="paragraph">
+    <p id="one">_</p>
+    <p id="two">_</p>
+    <p id="three">_</p>
+    <p id="four">_</p>
+    <p id="five">_</p>
+    <p id="six">_</p>
+    <p id="seven">_</p>
+    <p id="eight">_</p>
+    <p id="nine">_</p>
+    <p id="ten">_</p>
+    <p id="elleven">_</p>
+    <p id="twelve">_</p>
+  </div>
+</body>
+
+</html>
