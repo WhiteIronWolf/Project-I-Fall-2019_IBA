@@ -2,6 +2,7 @@
 document.getElementById("checkboxes").style.visibility = "hidden";
 document.getElementById("upperScoreSection").style.visibility = "hidden";
 document.getElementById("lowerScoreSection").style.visibility = "hidden";
+document.getElementById("checkScore").style.visibility = "hidden";
 
 var turn = 0
 var roll = [0, 0, 0, 0, 0]; //Store Rolls
@@ -380,8 +381,7 @@ function consoleLog() {
         document.getElementById("button15").style.visibility = "hidden";
     }
 }
-
-
+var finalturn = 0
 function nextRound() {
     turn = 0
     document.getElementById("rollDice").innerHTML = "Next Round";
@@ -394,10 +394,37 @@ function nextRound() {
     document.getElementById("checkbox3").checked = false;
     document.getElementById("checkbox4").checked = false;
     document.getElementById("checkbox5").checked = false;
-    finalturn++;
+    finalturn++
+    console.log(finalturn);
+    if (finalturn >= 15) {
+        document.getElementById("checkScore").style.visibility = "visible";
+        document.getElementById("diceTable").style.visibility = "hidden";
+        document.getElementById("rollButton").style.visibility = "hidden";
+
+    }
+
 }
 
 function finalSum() {
+    document.getElementById("upperScoreSection").style.visibility = "visible";
+    document.getElementById("lowerScoreSection").style.visibility = "visible";
+
+    document.getElementById("button1").style.visibility = "hidden";
+    document.getElementById("button2").style.visibility = "hidden";
+    document.getElementById("button3").style.visibility = "hidden";
+    document.getElementById("button4").style.visibility = "hidden";
+    document.getElementById("button5").style.visibility = "hidden";
+    document.getElementById("button6").style.visibility = "hidden";
+    document.getElementById("button7").style.visibility = "hidden";
+    document.getElementById("button8").style.visibility = "hidden";
+    document.getElementById("button9").style.visibility = "hidden";
+    document.getElementById("button10").style.visibility = "hidden";
+    document.getElementById("button11").style.visibility = "hidden";
+    document.getElementById("button12").style.visibility = "hidden";
+    document.getElementById("button13").style.visibility = "hidden";
+    document.getElementById("button14").style.visibility = "hidden";
+    document.getElementById("button15").style.visibility = "hidden";
+
     var s1 = document.getElementById("sameRollSumOne").innerHTML;
     var s2 = document.getElementById("sameRollSumTwo").innerHTML;
     var s3 = document.getElementById("sameRollSumThree").innerHTML;
@@ -417,4 +444,5 @@ function finalSum() {
 
     var finalSum = parseFloat(s1) + parseFloat(s2) + parseFloat(s3) + parseFloat(s4) + parseFloat(s5) + parseFloat(s6) + parseFloat(s7) + parseFloat(s8) + parseFloat(s9) + parseFloat(s10) + parseFloat(s11) + parseFloat(s12) + parseFloat(s13) + parseFloat(s14) + parseFloat(s15);
     document.getElementById("finalSum").innerHTML = "The Sum of Upper Section + Lower Section is " + finalSum;
-}
+} 
+
