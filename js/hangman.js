@@ -21,10 +21,14 @@ function enter() {
     error.innerHTML = "Please enter a letter";
     error.style.color = "red";
   }
+  document.getElementById('underscore').innerHTML = '';
   for (var j = 0; j < word.length; j++) {
     if (guess.value == word[j]) {
       answerArray[j] = guess.value;
+      document.getElementById('underscore').innerHTML += answerArray[j];
       console.log("Hey you got it right");
+    } else {
+      document.getElementById('underscore').innerHTML += ' _ ';
     }
   }
 
