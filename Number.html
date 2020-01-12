@@ -51,45 +51,9 @@
     }
 
   }
-//sæt cookie og udløbsdato
-  function setCookie(cookie_name,cookie_value,exspire_days) {
-    var d = new Date();
-    d.setTime(d.getTime() + (expire_days*24*60*60));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cookie_name + "=" + cookie_value + ";" + exspire_days + ";path=/";
-  }
-
-//decoder cookie og checker om
-  function getCookie(cookie_name) {
-    var name = cookie_name + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-//checker efter cookie og hvis der ikke er nogen, så beder den om at brugeren tilføjer deres navn
-  function checkCookie() {
-    var user=getCookie("username");
-    if (user != "") {
-      alert("Hallo " + user + "Your last score was" + count);
-    } else {
-       user = prompt("Please enter your name:","");
-       if (user != "" && user != null) {
-         setCookie("username", user, 30);
-       }
-    }
-  }
 </script>
 
-<body onload="checkCookie()">
+<body>
   <div id="home"> <!-- det her er kun navigations menuen -->
     <a href="index.html">HOME</a>
   </div>
